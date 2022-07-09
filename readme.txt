@@ -42,3 +42,17 @@ bcrypt.compare(pwd,hashedpwd,(err,result)
     if(result==true)authntiacted
     else not authenticated
 })
+
+=>JWT:
+jason web token :a compact and self-contained way for securely transmitting information between parties as a JSON object
+One of its major use is API authentication.You get a secret token when u register that api.
+On the client side, you create the token (there are many libraries for this) using the secret token to sign it.
+
+When you pass it as part of the API request, the server will know it’s that specific client because the request is signed with its unique identifier
+
+Consider only admin is allowed to create a post.So we assign a token whenver someone login 
+and if he want to create a post we ll compare the token with our signed token.
+if equal then he will be able to do so.
+
+npm install jsonwebtoken
+Check jwt.js file for code
