@@ -3,7 +3,7 @@ const App = express()
 const bodyparser = require('body-parser')
 const mongoose = require('mongoose')
 const mongooseUri = 'mongodb+srv://admin:123@cluster0.oopswlg.mongodb.net/?retryWrites=true&w=majority';
-
+const bcrypt=require('bcrypt')
 //MiddleWare
 App.use(bodyparser.json())
 
@@ -23,7 +23,7 @@ App.post('/api/postUser',(req,res)=>{
         {
             console.log(err)
         }
-        res.send(200,doc)
+        res.status(200).send(doc)
     })
 })
 App.listen(3001, () => {
