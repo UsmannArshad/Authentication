@@ -1,5 +1,6 @@
 const mongoose=require('mongoose')
 const bcrypt=require('bcrypt')
+const jwt=require('jsonwebtoken')
 const userSchema=mongoose.Schema({
     Email:{
         type:String,
@@ -11,6 +12,9 @@ const userSchema=mongoose.Schema({
         type:String,
         required:true,
         minLength:6
+    },
+    Token:{
+        type:String
     }
 })
 userSchema.pre('save',function(next){
@@ -20,5 +24,11 @@ userSchema.pre('save',function(next){
         next()
     })
 })
+userSchema.methods.createToken=function(cb){
+    console.log("User",this)
+    var token=jwt.sign(this.Email,'supersecretpassword')
+    this.Token=token
+    cb(this)
+}
 const User=mongoose.model('User',userSchema)
 module.exports={User}
