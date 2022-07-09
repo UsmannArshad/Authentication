@@ -11,7 +11,20 @@ App.use(bodyparser.json())
 const { User } = require('./models/users')
 mongoose.connect(mongooseUri)
 App.get('/',(req,res)=>{
-res.end("gg")
+res.send("gg")
+})
+App.post('/api/postUser',(req,res)=>{
+    const newUser=new User({
+        Email:req.body.Email,
+        Password:req.body.Password
+    })
+    newUser.save((err,doc)=>{
+        if(err)
+        {
+            console.log(err)
+        }
+        res.send(200,doc)
+    })
 })
 App.listen(3001, () => {
     console.log("Running on port 3001")
