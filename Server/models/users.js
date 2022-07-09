@@ -30,5 +30,12 @@ userSchema.methods.createToken=function(cb){
     this.Token=token
     cb(this)
 }
+userSchema.statics.findbyToken=function(token,cb){
+    const email=jwt.verify(token,'supersecretpassword')
+    User.findOne({Email:email},(err,doc)=>{
+        if(err)return cb(err)
+        return cb(null,doc)
+    })
+}
 const User=mongoose.model('User',userSchema)
 module.exports={User}

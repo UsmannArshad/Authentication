@@ -56,3 +56,5 @@ if equal then he will be able to do so.
 
 npm install jsonwebtoken
 Check jwt.js file for code
+jwt.sign(data,'supersecure')
+jwt.verify(token,'supersecure')
