@@ -33,3 +33,12 @@ a single bcrypt hash.The higher the cost factor, the more hashing rounds are don
 Hashing of pwd while posting new user:
 For this we ll ue pre middleware that will hash the pwd before saving into db
 Watch users.js for explanation.
+
+=>Login:
+To login we have to compare passwords.First we ll get the user by comparing email.
+now we hve encrypted password we will compare it with given password.It will return boolean by this method:
+bcrypt.compare(pwd,hashedpwd,(err,result)
+{
+    if(result==true)authntiacted
+    else not authenticated
+})
