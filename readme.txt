@@ -58,3 +58,7 @@ npm install jsonwebtoken
 Check jwt.js file for code
 jwt.sign(data,'supersecure')
 jwt.verify(token,'supersecure')
+
+=>Deployment:
+To deploy this app we will use heroku.
+Login to heroku->create App->deploy->Install heroku CLI(if not installed)
