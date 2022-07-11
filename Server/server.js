@@ -57,6 +57,6 @@ User.findbyToken(cookies,(err,user)=>{
     res.status(200).send(user)
 })
 })
-App.listen(port,() => {
+App.listen(port,'0.0.0.0',() => {
     console.log("Running on port 3001")
 })
