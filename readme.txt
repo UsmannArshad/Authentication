@@ -72,4 +72,7 @@ heroku git:remote -a authorizationapplication
 git add .
 git commit -am "Deploying"
 git push heroku master/main
-
+=>Link:
+After pushing it will give u a link where u can find ur project
+https://authorizationapplication.herokuapp.com/ deployed to heroku
+Make sure u not copy .git link 

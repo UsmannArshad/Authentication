@@ -5,6 +5,7 @@ const cookieparser = require('cookie-parser')
 const mongoose = require('mongoose')
 const mongooseUri = 'mongodb+srv://admin:123@cluster0.oopswlg.mongodb.net/?retryWrites=true&w=majority';
 const bcrypt = require('bcrypt')
+const port=process.env.PORT|| 3001;
 //MiddleWare
 App.use(bodyparser.json())
 App.use(cookieparser())
@@ -56,6 +57,6 @@ User.findbyToken(cookies,(err,user)=>{
     res.status(200).send(user)
 })
 })
-App.listen(3001, () => {
+App.listen(port,() => {
     console.log("Running on port 3001")
 })
