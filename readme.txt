@@ -61,4 +61,15 @@ jwt.verify(token,'supersecure')
 
 =>Deployment:
 To deploy this app we will use heroku.
-Login to heroku->create App->deploy->Install heroku CLI(if not installed)
+=>Login to heroku->create App->deploy->Install heroku CLI(if not installed)->run heroku login cmd->
+=>Initialize a git repository if ur project is not on github
+$ cd my-project/
+$ git init
+$ heroku git:remote -a authorizationapplication
+If already existing then run:
+heroku git:remote -a authorizationapplication
+=>Push:
+git add .
+git commit -am "Deploying"
+git push heroku master/main
+
