@@ -80,3 +80,5 @@ Make sure u not copy .git link
 =>U'll have to push again whenever we ll update anything.
 Now u can test it to postman without localhost but like:
 https://authorizationapplication.herokuapp.com/api/login etc
+
+heroku logs --tail is used for detecting erros like console
